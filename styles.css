@@ -432,12 +432,25 @@ img {
 .page-rsvp,
 .page-photos,
 .page-registry {
+  position: relative;
+  z-index: 0;
   min-height: 100vh;
   background-color: #050505;
+}
+
+.page-rsvp::before,
+.page-photos::before,
+.page-registry::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background-image: url("assets/pattern.webp");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
 .page-rsvp .site-header,
@@ -761,7 +774,14 @@ img {
   border: 0;
 }
 
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
 .photo-add-button:focus-within {
+  outline: none;
+}
+
+.photo-add-button:has(:focus-visible) {
   outline: 2px solid #111;
   outline-offset: 4px;
 }

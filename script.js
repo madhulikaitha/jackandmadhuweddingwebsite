@@ -134,6 +134,16 @@ if (navToggle && siteNav) {
   if (document.fonts) document.fonts.ready.then(layoutNav);
 }
 
+document.addEventListener("click", (event) => {
+  const control = event.target.closest("a, button, .photo-add-button");
+  if (!control) return;
+  window.setTimeout(() => {
+    const field = control.matches(".photo-add-button") ? control.querySelector("input") : null;
+    if (field) field.blur();
+    control.blur();
+  }, 0);
+});
+
 const rsvpForm = document.querySelector("#rsvp-form");
 
 if (rsvpForm) {

@@ -1,3 +1,3 @@
 window.WEDDING_PHOTOS = {
-  api: "",
+  api: "https://wedding-photos.jackandmadhu.workers.dev",
 };
