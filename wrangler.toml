@@ -1,0 +1,7 @@
+name = "wedding-photos"
+main = "worker/index.js"
+compatibility_date = "2026-11-23"
+
+[[r2_buckets]]
+binding = "PHOTOS"
+bucket_name = "wedding-photos"

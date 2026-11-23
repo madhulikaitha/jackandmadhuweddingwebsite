@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>John Wright &amp; Madhulika</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo-link" href="#top">
+        <span class="logo">
+          <img src="assets/logo.svg" alt="J and M monogram" width="414" height="354" />
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a class="nav-link is-active" href="#top" aria-current="page">
+          HOME
+          <img src="assets/nav-line.svg" alt="" width="73" height="1" />
+        </a>
+        <a class="nav-link" href="rsvp.html">
+          RSVP
+          <img src="assets/nav-line.svg" alt="" width="73" height="1" />
+        </a>
+        <a class="nav-link" href="registry.html">
+          REGISTRY
+          <img src="assets/nav-line.svg" alt="" width="73" height="1" />
+        </a>
+        <a class="nav-link" href="photos.html">
+          PHOTOS
+          <img src="assets/nav-line.svg" alt="" width="73" height="1" />
+        </a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="John Wright and Madhulika">
+        <div class="hero-photo">
+          <img
+            src="assets/hero.png"
+            width="2880"
+            height="2160"
+            alt="John and Madhulika seated together in a garden"
+          />
+          <div class="hero-shade"></div>
+        </div>
+        <h1 class="names">
+          <span class="name">John Wright</span>
+          <span class="amp">&amp;</span>
+          <span class="name">Madhulika</span>
+        </h1>
+      </section>
+
+      <section class="details" aria-label="Wedding details">
+        <img
+          class="monogram"
+          src="assets/monogram.svg"
+          alt=""
+          width="917"
+          height="595"
+        />
+        <p class="place">861 Delgado Dr, Baton Rouge, Louisiana</p>
+        <p class="time">Ceremony starts at 7 pm</p>
+        <p class="date">December 30, 2026</p>
+        <a class="rsvp-button" href="rsvp.html">RSVP</a>
+      </section>
+
+      <section class="faq" id="details" aria-labelledby="faq-title">
+        <img class="faq-pattern" src="assets/pattern.png" alt="" />
+        <div class="faq-inner">
+          <h2 id="faq-title">DETAILS &amp; FAQ’s</h2>
+          <div class="faq-list" id="faq-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js?v=4"></script>
+  </body>
+</html>

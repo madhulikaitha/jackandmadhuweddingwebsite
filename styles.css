@@ -1,0 +1,993 @@
+:root {
+  --cream: #f2efde;
+  --ink: #000000;
+  --ivory: #f2efde;
+  --name-size: clamp(1.15rem, 8.33cqi, 7.5rem);
+  --detail-size: clamp(1.35rem, 2.78vw, 2.5rem);
+  --faq-title-size: clamp(2rem, 4.17vw, 3.75rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+img {
+  border: 0;
+}
+
+.site-header {
+  position: relative;
+  z-index: 5;
+  width: min(1440px, 100%);
+  min-height: clamp(4rem, 5.76vw, 5.2rem);
+  margin: 0 auto;
+  padding: clamp(0.6rem, 1.1vw, 1rem) clamp(1rem, 2.43vw, 2.2rem) 0.4rem clamp(0.6rem, 0.7vw, 0.65rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.75rem, 2vw, 2rem);
+  background: var(--cream);
+}
+
+.logo-link {
+  display: block;
+  line-height: 0;
+  flex: none;
+}
+
+.logo {
+  display: block;
+  width: clamp(2.35rem, 5.6vw, 4.85rem);
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex: none;
+  flex-wrap: nowrap;
+  gap: clamp(0.85rem, 4.1vw, 3.7rem);
+  margin-top: clamp(0.15rem, 0.6vw, 0.45rem);
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: "Baskervville SC", "Palatino Linotype", Palatino, serif;
+  font-size: clamp(0.75rem, 1.39vw, 1.25rem);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.nav-link img {
+  width: 3.65em;
+  height: 1px;
+  display: block;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.45s ease;
+}
+
+.nav-link:hover img,
+.nav-link:focus-visible img {
+  transform: scaleX(1);
+}
+
+.nav-link.is-active img,
+.nav-link.is-active:hover img,
+.nav-link.is-active:focus-visible img {
+  transform: scaleX(1);
+  transition: none;
+}
+
+.nav-toggle {
+  display: none;
+  width: clamp(2.25rem, 6vw, 2.75rem);
+  height: clamp(2.25rem, 6vw, 2.75rem);
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-toggle-icon,
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  display: block;
+  width: 1.35rem;
+  height: 1px;
+  background: var(--ink);
+  position: relative;
+}
+
+.nav-toggle-icon::before,
+.nav-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-icon::before {
+  top: -0.42rem;
+}
+
+.nav-toggle-icon::after {
+  top: 0.42rem;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hero {
+  container-type: inline-size;
+  position: relative;
+  height: clamp(26rem, 52.85vw, 47.56rem);
+  color: #fff;
+}
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 46%;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+}
+
+.names {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  margin: 0;
+  padding: 0 4vw;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  column-gap: 0.55em;
+  row-gap: 0;
+  font-family: Italianno, "Segoe Script", cursive;
+  font-size: clamp(1.15rem, 8.33vw, 7.5rem);
+  font-size: clamp(1.15rem, 8.33cqi, 7.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  font-style: normal;
+  text-align: center;
+}
+
+.name {
+  white-space: nowrap;
+}
+
+.amp {
+  font-family: "Great Vibes", "Segoe Script", cursive;
+  font-size: 0.833em;
+  font-weight: 400;
+  line-height: 1;
+  position: relative;
+  top: -0.08em;
+}
+
+.details {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--detail-size);
+  padding: 2.7em 6vw 2.4em;
+  background: var(--cream);
+}
+
+.monogram {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(917px, 92vw);
+  height: auto;
+  max-height: 100%;
+  margin: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.place,
+.time,
+.date {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto 1.1em;
+  max-width: 18em;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: 1em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.place,
+.date {
+  font-weight: 600;
+}
+
+.time {
+  font-weight: 700;
+  margin-bottom: 1.25em;
+}
+
+.date {
+  margin-bottom: 0;
+}
+
+.rsvp-button {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 7.6em;
+  height: 2.22em;
+  margin-top: 2.03em;
+  border-radius: 0.5em;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Cormorant Garamond", Palatino, serif;
+  font-size: clamp(1.25rem, 2.22vw, 2rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.faq {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.95);
+  color: var(--ivory);
+}
+
+.faq-pattern {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.faq-inner {
+  position: relative;
+  z-index: 1;
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem) clamp(4rem, 9.5vw, 8.56rem);
+}
+
+.faq h2 {
+  margin: 0 auto 1.75em;
+  padding-top: 0.93em;
+  max-width: 12em;
+  text-align: center;
+  font-family: "Cormorant Garamond", Palatino, serif;
+  font-size: var(--faq-title-size);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ivory);
+}
+
+.faq-list {
+  width: min(929px, 100%);
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #fff;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7em 0;
+  border: 0;
+  background: transparent;
+  color: var(--ivory);
+  text-align: left;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", Palatino, serif;
+  font-size: clamp(1.15rem, 2.08vw, 1.875rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.faq-question:focus-visible,
+.nav-link:focus-visible,
+.rsvp-button:focus-visible,
+.logo-link:focus-visible,
+.rsvp-input:focus-visible,
+.step:focus-visible,
+.rsvp-submit:focus-visible,
+.registry-button:focus-visible,
+.thanks-note a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.chevron {
+  width: 0.63em;
+  height: 0.36em;
+  flex: none;
+}
+
+.faq-answer {
+  display: none;
+  max-width: 38em;
+  margin: 0 0 0.75em;
+  padding: 0;
+  font-family: "Cormorant Garamond", Palatino, serif;
+  font-size: clamp(1rem, 1.67vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ivory);
+}
+
+.faq-item.is-open .faq-question {
+  padding-bottom: 0.2em;
+}
+
+.faq-item.is-open .faq-answer {
+  display: block;
+}
+
+.site-header.is-compact .nav-toggle {
+  display: inline-flex;
+}
+
+.site-header.is-compact .nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 5;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  margin: 0;
+  padding: 0.35rem 1.5rem 1.35rem;
+  background: var(--cream);
+}
+
+.site-header.is-compact .nav.is-open {
+  display: flex;
+}
+
+.site-header.is-compact .nav-link {
+  font-size: clamp(1rem, 4.2vw, 1.25rem);
+}
+
+.page-rsvp,
+.page-photos,
+.page-registry {
+  min-height: 100vh;
+  background-color: #050505;
+  background-image: url("assets/pattern.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.page-rsvp .site-header,
+.page-photos .site-header,
+.page-registry .site-header {
+  width: 100%;
+  z-index: 5;
+}
+
+.rsvp-main {
+  padding: clamp(1.35rem, 3.5vw, 3.25rem) clamp(0.85rem, 3vw, 2rem) clamp(2rem, 5vw, 4rem);
+}
+
+.rsvp-card {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: clamp(2rem, 4.5vw, 3.4rem) clamp(1.15rem, 5vw, 4.25rem) clamp(2.1rem, 4.5vw, 3.2rem);
+  border-radius: clamp(1rem, 2vw, 1.6rem);
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.rsvp-card h1 {
+  margin: 0;
+  text-align: center;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: clamp(2.7rem, 4.6vw, 3.55rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.045em;
+}
+
+.rsvp-lead {
+  max-width: 40rem;
+  margin: 1.15rem auto 0;
+  text-align: center;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: clamp(1.05rem, 1.5vw, 1.22rem);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.rsvp-lead strong {
+  font-weight: 700;
+}
+
+.rsvp-form {
+  width: min(34rem, 100%);
+  margin: clamp(1.6rem, 3vw, 2.15rem) auto 0;
+}
+
+.rsvp-field {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.rsvp-field label,
+.rsvp-field legend {
+  display: block;
+  padding: 0;
+  margin: 0 0 0.4rem;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: clamp(1.12rem, 1.65vw, 1.32rem);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.rsvp-input {
+  display: block;
+  width: 100%;
+  height: 2.55rem;
+  margin: 0;
+  padding: 0 1.05rem;
+  border: 1px solid #111;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: 1.15rem;
+}
+
+.choice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: fit-content;
+  margin: 0.28rem 0;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: clamp(1.12rem, 1.65vw, 1.32rem);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.choice input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.diamond {
+  position: relative;
+  display: inline-block;
+  width: 0.68rem;
+  height: 0.68rem;
+  flex: none;
+  border: 1px solid #111;
+  transform: rotate(45deg);
+}
+
+.choice input:checked + .diamond::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #111;
+}
+
+.choice input:focus-visible + .diamond {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.guest-hint {
+  margin: -0.1rem 0 0;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: clamp(0.78rem, 1.05vw, 0.92rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.7rem;
+}
+
+.step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.guest-count {
+  width: 4.35rem;
+  height: 2.15rem;
+  padding: 0 0.4rem;
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+.guest-count::-webkit-outer-spin-button,
+.guest-count::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.guest-field.is-disabled {
+  opacity: 0.4;
+}
+
+.field-error,
+.form-status {
+  margin: 0.4rem 0 0;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.3;
+  color: #6e2424;
+}
+
+.field-error:empty,
+.form-status:empty {
+  display: none;
+}
+
+.form-status {
+  text-align: center;
+}
+
+.rsvp-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(16.75rem, 100%);
+  height: 2.7rem;
+  margin: 1.65rem auto 0;
+  padding: 0 1.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1;
+}
+
+.rsvp-submit:hover {
+  background: #1a1a1a;
+}
+
+.rsvp-submit:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.rsvp-thanks {
+  width: min(36rem, 100%);
+  margin: 1.25rem auto 0.85rem;
+  text-align: center;
+}
+
+.rsvp-thanks a {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: inherit;
+}
+
+.thanks-script {
+  margin: 0.1rem 0 0.15rem;
+  font-family: Italianno, "Segoe Script", cursive;
+  font-size: clamp(4.4rem, 8vw, 6.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  font-style: normal;
+  color: var(--ink);
+}
+
+.thanks-detail {
+  margin: 0.15rem 0 0;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: clamp(1.3rem, 2.1vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.thanks-note {
+  max-width: 28rem;
+  margin: 0.45rem auto 0;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: clamp(1.05rem, 1.55vw, 1.22rem);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.thanks-note a {
+  color: inherit;
+}
+
+.rsvp-hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.photos-card {
+  width: min(1080px, 100%);
+}
+
+.photos-card .rsvp-lead {
+  max-width: 32rem;
+}
+
+.photo-add {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.photo-add-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: 0.55rem 1.35rem;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+.photo-add-button:hover {
+  background: #1a1a1a;
+}
+
+.photo-add-button input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.photo-add-button:focus-within {
+  outline: 2px solid #111;
+  outline-offset: 4px;
+}
+
+.photo-add-button.is-busy {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.photo-status,
+.photo-empty {
+  margin: 0.85rem auto 0;
+  text-align: center;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.photo-status:empty {
+  display: none;
+}
+
+.photo-status.is-error {
+  color: #6e2424;
+}
+
+.photo-empty {
+  max-width: 24rem;
+  margin-top: 1.55rem;
+  padding-top: 1.55rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.16);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+  margin-top: 1.55rem;
+  padding-top: 1.55rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.16);
+}
+
+.photo-grid[hidden] {
+  display: none;
+}
+
+.shot {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.35rem;
+  background: #e7e2d2;
+}
+
+.shot-open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.shot img,
+.shot-open img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.shot-remove {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.4rem 0.6rem;
+  border: 0;
+  border-top: 1px solid rgba(17, 17, 17, 0.16);
+  background: var(--cream);
+  color: var(--ink);
+  cursor: pointer;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.shot-remove:hover {
+  background: #e7e2d0;
+}
+
+.photo-view {
+  width: min(52rem, calc(100vw - 2rem));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.photo-view::backdrop {
+  background: rgba(5, 5, 5, 0.88);
+}
+
+.photo-view img {
+  display: block;
+  width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 0.4rem;
+  background: #111;
+}
+
+.photo-view-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+}
+
+.photo-save,
+.photo-view-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+}
+
+.photo-save {
+  border: 0;
+  background: #fff;
+  color: #111;
+}
+
+.photo-view-close {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.shot-open:focus-visible,
+.shot-remove:focus-visible,
+.photo-save:focus-visible,
+.photo-view-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.registry-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(22rem, 100%);
+  min-height: 2.7rem;
+  margin: clamp(1.5rem, 3vw, 1.85rem) auto 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+}
+
+.registry-button:hover {
+  background: #1a1a1a;
+}
+
+.registry-note {
+  margin: 0.9rem 0 0;
+  text-align: center;
+  font-family: "Cormorant Garamond", Palatino, "Palatino Linotype", serif;
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+@media (max-width: 520px) {
+  .registry-button {
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 800px) {
+  .photo-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-header .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-header .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    flex: none;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    margin: 0;
+    padding: 0.35rem 1.5rem 1.35rem;
+    background: var(--cream);
+  }
+
+  .site-header .nav.is-open {
+    display: flex;
+  }
+
+  .site-header .nav-link {
+    font-size: clamp(1rem, 4.2vw, 1.25rem);
+  }
+}

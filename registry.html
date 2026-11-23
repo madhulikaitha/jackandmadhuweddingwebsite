@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registry — John Wright &amp; Madhulika</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Great+Vibes&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-registry">
+    <header class="site-header">
+      <a class="logo-link" href="index.html">
+        <span class="logo">
+          <img src="assets/logo.png" alt="J and M monogram" />
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">
+          HOME
+          <img src="assets/nav-line.svg" alt="" width="73" height="1" />
+        </a>
+        <a class="nav-link" href="rsvp.html">
+          RSVP
+          <img src="assets/nav-line.svg" alt="" width="73" height="1" />
+        </a>
+        <a class="nav-link is-active" href="registry.html" aria-current="page">
+          REGISTRY
+          <img src="assets/nav-line.svg" alt="" width="73" height="1" />
+        </a>
+        <a class="nav-link" href="photos.html">
+          PHOTOS
+          <img src="assets/nav-line.svg" alt="" width="73" height="1" />
+        </a>
+      </nav>
+    </header>
+
+    <main class="rsvp-main">
+      <section class="rsvp-card" aria-labelledby="registry-title">
+        <h1 id="registry-title">REGISTRY</h1>
+        <p class="rsvp-lead">
+          We would be delighted simply to have you with us. If you wish to honor us with a gift,
+          we have gathered a registry of a few things we would love for our home.
+        </p>
+
+        <a class="registry-button" id="explore-registry">Explore Our Registry</a>
+        <p class="registry-note">Our registry is hosted on Joy and opens in a new tab.</p>
+      </section>
+    </main>
+
+    <script>
+      // JOY_REGISTRY_URL
+      // Paste the public link from Joy: Registry, then Share.
+      // Explore Our Registry opens this address in a new tab.
+      const JOY_REGISTRY_URL = "https://withjoy.com/madhulika-and-jack/registry";
+
+      const exploreRegistry = document.querySelector("#explore-registry");
+      if (exploreRegistry && /^https?:\/\//i.test(JOY_REGISTRY_URL)) {
+        exploreRegistry.href = JOY_REGISTRY_URL;
+        exploreRegistry.target = "_blank";
+        exploreRegistry.rel = "noopener noreferrer";
+      }
+    </script>
+    <script src="script.js?v=3"></script>
+  </body>
+</html>
