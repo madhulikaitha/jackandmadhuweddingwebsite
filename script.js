@@ -2,12 +2,12 @@ const faqs = [
   {
     question: "What time should I arrive?",
     answer:
-      "Seating will open one hour before the ceremony. We recommend arriving 20–30 minutes early to allow time for parking, finding your seat, and getting settled. The ceremony will begin promptly at 7:00 PM, with dinner to follow.",
+      "Seating will open one hour before the ceremony. We recommend arriving 20–30 minutes early to allow time for parking, finding your seat, and getting settled. The ceremony will begin promptly at 7:00 PM, with reception to follow.",
   },
   {
     question: "What should I wear?",
     answer:
-      "We would love for our guests to dress in formal or cocktail attire. Think elegant evening dresses, suits, dress shirts, or similar attire. As part of the celebration will take place outdoors, we recommend choosing shoes that are comfortable on grass.",
+      "We would love for our guests to dress in semi formal or cocktail attire. Think elegant evening dresses, suits, dress shirts, or similar attire. As part of the celebration will take place outdoors, we recommend choosing shoes that are comfortable on grass.",
   },
   {
     question: "Where can I park?",
@@ -22,7 +22,7 @@ const faqs = [
   {
     question: "Will the ceremony be outdoors?",
     answer:
-      "Yes! Our ceremony will take place outdoors in the backyard, with dinner following afterward. December evenings in Louisiana can be cool, so we recommend bringing a light coat or wrap and checking the weather before arriving.",
+      "Yes! Our ceremony will take place outdoors in the backyard, with the reception to follow. December evenings in Louisiana can be cool, so we recommend bringing a light coat or wrap and checking the weather before arriving.",
   },
   {
     question: "When should I RSVP by?",
@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "Will dinner be served?",
     answer:
-      "Yes! Dinner will be served following the ceremony. We look forward to sharing a meal with all of our family and friends as we celebrate together.",
+      "Yes! The reception will follow the ceremony, and dinner will be served buffet style rather than a seated meal. We look forward to sharing a meal with all of our family and friends as we celebrate together.",
   },
   {
     question: "Can I take photos during the ceremony?",

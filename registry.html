@@ -52,19 +52,19 @@
         </p>
 
         <a class="registry-button" id="explore-registry">Explore Our Registry</a>
-        <p class="registry-note">Our registry is hosted on Joy and opens in a new tab.</p>
+        <p class="registry-note">Our registry is hosted on The Knot and opens in a new tab.</p>
       </section>
     </main>
 
     <script>
-      // JOY_REGISTRY_URL
-      // Paste the public link from Joy: Registry, then Share.
+      // THE_KNOT_REGISTRY_URL
+      // Paste the public link from The Knot: Registry, then Share.
       // Explore Our Registry opens this address in a new tab.
-      const JOY_REGISTRY_URL = "https://withjoy.com/madhulika-and-jack/registry";
+      const THE_KNOT_REGISTRY_URL = "https://www.theknot.com/us/madhulika-itha-and-jack-morganti-2026-12-30/registry";
 
       const exploreRegistry = document.querySelector("#explore-registry");
-      if (exploreRegistry && /^https?:\/\//i.test(JOY_REGISTRY_URL)) {
-        exploreRegistry.href = JOY_REGISTRY_URL;
+      if (exploreRegistry && /^https?:\/\//i.test(THE_KNOT_REGISTRY_URL)) {
+        exploreRegistry.href = THE_KNOT_REGISTRY_URL;
         exploreRegistry.target = "_blank";
         exploreRegistry.rel = "noopener noreferrer";
       }
